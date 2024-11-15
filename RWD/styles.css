@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    color: white;
+}
+
+.flex-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a {
+    height: 25%;
+    background-color: rgb(0, 56, 161);
+}
+.bc {
+    height: 50%;
+}
+.b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+}
+.b1 {
+    height: 100%;
+    background-color: green;
+}
+.b2 {
+    height: 100%;
+    background-color: rgb(80, 192, 0);
+}
+.b3 {
+    height: 100%;
+    background-color: rgb(0, 179, 214);
+}
+.c {
+    height: 50%;
+    background-color: rgb(255, 217, 0);
+}
+.d {
+    background-color: rgb(255, 123, 0);
+    height: 25%;
+}
+
+/*max-width:頁面寬度，小於時套用*/
+@media screen and (max-width: 768px) {
+    .a {
+        height: 20%;
+    }
+    .bc {
+        display: flex;
+        height: 60%;
+    }
+    .b {
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+    }
+    .c {
+        width: 50%;
+        height: 100%;
+    }
+    .d {
+        height: 20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .a {
+        height: 16.6%;
+    }
+    .bc {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 66.8%;
+    }
+    .b {
+        height: 75%;
+    }
+    .c {
+        height: 25%;
+        width: 100%;
+    }
+    .d {
+        height: 16.6%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .a {
+        height: 16.6%;
+    }
+    .bc {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 66.8%;
+    }
+    .b {
+        height: 75%;
+    }
+    .c {
+        height: 25%;
+        width: 100%;
+    }
+    .d {
+        height: 16.6%;
+    }
+}@media screen and (max-width: 375px) {
+    .b {
+        width: 100%;
+    }
+    .b3 {
+    order: -1;  
+    }
+}
+
