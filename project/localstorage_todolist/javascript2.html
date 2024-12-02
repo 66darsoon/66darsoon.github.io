@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="javascript2.css">
+    <script src="javascript2.js" defer></script>
+    <title>JavaScript2</title>
+</head>
+<body>
+
+    <h1>To Do List</h1>
+    <div id="container">
+        <div id="List">
+            <input type="text" name="list" id="todolist" placeholder="請輸入代辦事項...">
+            <select name="" id="select" onchange="show()">
+                <option value="normal">一般</option>
+                <option value="important">重要</option>
+                <option value="urgent">緊急</option>
+            </select>
+            <button onclick="add()">新增</button>
+            <button onclick="postText()">匯出文字</button>
+            <button id="save-btn">儲存</button>
+        </div>
+        <div id="otherList">
+            <p>代辦事項</p>
+            <ul id="checkList"></ul>
+        </div>
+    </div>
+</body>
+</html>
