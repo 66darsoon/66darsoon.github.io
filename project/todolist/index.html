@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-wrapper">
+            <h3 class="todo-list-title">My ToDo List</h3>
+            <form class="input-wrapper" id="input-wrapper">
+                <input type="text" id="input">
+                <button id="add-button" class="add-button" onclick="add()" data-add="新增"></button>
+                <button id="save-button" class="save-button" onclick="saveState()" data-save="儲存"></button>
+            </form>
+            <ul class="list" id="list">
+                <li class="item">
+                    XXX
+                    <span class="delete"></span>
+                </li>
+                <li class="item checked">
+                    XXX
+                    <span class="delete"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(180deg, #C1E1FF 0%, #0085FF 100%); */
+    background: linear-gradient(#96fbc4, #0085ff); /*漸層*/
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+/*todolist整體架構*/
+.container {
+    background-color: white;
+    width: 400px;
+    margin: 100px auto;
+    padding: 10px 100px;
+    border-radius: 30px;
+}
+
+/*h3-title*/
+.todo-list-title {
+    position: relative;
+    left: -20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.inner-wrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*form*/
+.input-wrapper {
+    border-radius: 20px;
+    background: #EEEFF0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 424px;
+}
+
+.input-wrapper input {
+    background: transparent;
+    border: 0px;
+    flex: 1;
+    outline: none;
+    padding: 10px 20px;
+}
+
+.input-wrapper .add-button {
+    background-color: #359AFF;
+    border: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    border-radius: 20px 0px 0px 20px;
+
+    &::before{
+        content: attr(data-add);
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        left: 4px;
+    }
+    &:hover {
+        cursor: pointer;
+        color: rgb(79, 79, 79);
+        background-color: #badbfd;
+    }
+}
+.input-wrapper .save-button {
+    background-color: #359AFF;
+    border: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    border-radius: 0px 20px 20px 0px;
+
+    &::before{
+        content: attr(data-save);
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        right: 4px;
+    }
+    &:hover {
+        cursor: pointer;
+        color: rgb(79, 79, 79);
+        background-color: #badbfd;
+    }
+}
+
+.list {
+    list-style: none;
+    padding: 0px;
+}
+
+.list li {
+    vertical-align: middle; /*垂直對齊為置中*/
+    font-weight: 400;
+    padding: 5px;
+    position: relative;
+}
+
+.list li.checked {
+    text-decoration: line-through; /*將文字加上刪除線*/
+}
+
+/*未被選取的CSS樣式*/
+.list li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('image/square.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/*被選取後的CSS樣式*/
+.list li.checked::before {
+    background-image: url('image/check-box.png');
+}
+
+/*刪除按鈕樣式*/
+.delete {
+    background-image: url('image/delete.png');
+    padding: 5px;
+    margin-top: 1px;
+    border-radius: 20px;
+    background-size: 20px;
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.delete:hover {
+    background-color: #EEEFF0;
+    cursor: pointer;
+}
+
+
+
+/*modal-css*/
+.modalBackground {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding-top: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*modal-container*/
+.modalContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+    width: 20%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.modalTitle {
+    position: absolute;
+    top: -10px;
+    /* left: 20px; */
+    list-style: none;
+    color:brown;
+}
+
+.modalContent {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modalConfirmBtn {
+    position: absolute;
+    left: 100px;
+    bottom: 16px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: orange;
+        color: rgb(236, 236, 236);
+    }
+}
+
+.modalDenyBtn {
+    position: absolute;
+    right: 100px;
+    bottom: 16px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: orange;
+        color: rgb(236, 236, 236);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px 50px;
+    }
+    .inner-wrapper {
+        width: 80%;
+    }
+
+    .input-wrapper .add-button{ 
+        /* display: none; */
+        /* font-size: 12px; */
+        padding: 0 10px;
+    }
+    .input-wrapper .save-button{ 
+        /* display: none; */
+        font-size: 12px;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .container {
+        position: relative;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .input-wrapper .add-button::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('image/plus.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .input-wrapper .save-button::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("image/save.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    
+}
