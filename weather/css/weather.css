@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 220px;
+}
+tr, td{
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 導覽列 */
+.navbar {
+    display: flex;
+    align-items: flex-end;
+    width: 80%;
+    min-height: 100px;
+    border-bottom: 1px solid;
+}
+
+.logo {
+    font-size: 54px;
+}
+
+/* 各地區列表 */
+.area-list {
+    display: flex;
+    margin-left: auto;
+}
+
+@media (max-width:840px) {
+    .area-list {
+        display: none;
+    }
+}
+
+.area-item {
+    border: 1px solid;
+    border-bottom: unset;
+    padding: 5px 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.bgcolor {
+    background-color: antiquewhite;
+}
+
+#container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.card-region {
+    /* background-color: blue; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+}
+
+@media (max-width:1390px) {
+    .card-region {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:1080px) {
+    .card-region {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:768px) {
+    .card-region {
+        width: 95%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 每一格 */
+.card {
+    background-color:antiquewhite;
+    padding: 100%;
+    height: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
